@@ -12,5 +12,5 @@ from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'webpage.settings')
 
-# เปิดเผยตัวแปร WSGI callable ในชื่อ 'app'
+# เปิดเผย WSGI callable เป็นตัวแปรชื่อ 'app'
 app = get_wsgi_application()
