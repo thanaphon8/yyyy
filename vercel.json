@@ -8,12 +8,12 @@
   ],
   "routes": [
     {
+      "src": "/home",
+      "dest": "/"
+    },
+    {
       "src": "/(.*)",
       "dest": "webpage/wsgi.py"
     }
-  ],
-  "redirects": [
-    { "source": "/home", "destination": "/", "permanent": true }
   ]
-  
 }
