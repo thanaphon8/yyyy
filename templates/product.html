@@ -1,0 +1,153 @@
+{% extends "navebar.html" %} {% block content %}
+<div class="product-container">
+  <style>
+    body {
+      background-color: #ffffff; /* สีพื้นหลังของทั้งหน้า */
+    }
+    .fade-in {
+      opacity: 0;
+      animation: fadeInAnimation 1s ease-in forwards;
+    }
+
+    @keyframes fadeInAnimation {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .product-container {
+      background-color: #ffffff; /* สีพื้นหลังของคอนเทนเนอร์ */
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 1200px;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      margin: 20px auto;
+    }
+
+    .product-container h1 {
+      margin: 0 0 20px;
+      font-size: 28px;
+      color: #333;
+      text-align: center;
+    }
+
+    .product-item {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 20px;
+    }
+
+    .product-item img {
+      max-width: 300px;
+      border-radius: 8px;
+      margin-right: 20px;
+      flex: 1;
+    }
+
+    .product-details {
+      flex: 2;
+    }
+
+    .product-details h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .product-details p {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .product-details .price {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ff9933;
+      margin: 10px 0;
+    }
+
+    .product-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .product-buttons button {
+      background-color: #6633cc; /* สีพื้นหลังของปุ่ม */
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .product-buttons button:hover {
+      background-color: #4b2a8b; /* สีพื้นหลังของปุ่มเมื่อชี้เมาส์ */
+      transform: scale(1.05); /* ขยายปุ่มเล็กน้อยเมื่อชี้เมาส์ */
+    }
+  </style>
+  <div class="container">
+    <div class="fade-in">
+      <h1>สินค้าของเรา</h1>
+      <div class="product-item">
+        <img src="https://i.pinimg.com/736x/74/13/a1/7413a112868a01ec478a0cc9967955bd.jpg" alt="ผลิตภัณฑ์ 1" />
+        <div class="product-details">
+          <h2>ชื่อผลิตภัณฑ์ 1</h2>
+          <p>
+            รายละเอียดของผลิตภัณฑ์ 1 Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Nullam convallis orci a augue vehicula, a convallis
+            urna feugiat.
+          </p>
+          <div class="price">฿1,000</div>
+          <div class="product-buttons">
+            <button>เพิ่มไปยังตะกร้า</button>
+            <button>เพิ่มเติม</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-item">
+        <img src="https://i.pinimg.com/736x/5a/04/ca/5a04ca8563e9fc582797e2e1c40415bb.jpg" alt="ผลิตภัณฑ์ 2" />
+        <div class="product-details">
+          <h2>ชื่อผลิตภัณฑ์ 2</h2>
+          <p>
+            รายละเอียดของผลิตภัณฑ์ 2 Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Nullam convallis orci a augue vehicula, a convallis
+            urna feugiat.
+          </p>
+          <div class="price">฿2,000</div>
+          <div class="product-buttons">
+            <button>เพิ่มไปยังตะกร้า</button>
+            <button>เพิ่มเติม</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-item">
+        <img src="https://i.pinimg.com/736x/21/73/18/217318dc3ee16c87793cbcb4bae737ba.jpg" alt="ผลิตภัณฑ์ 3" />
+        <div class="product-details">
+          <h2>ชื่อผลิตภัณฑ์ 3</h2>
+          <p>
+            รายละเอียดของผลิตภัณฑ์ 3 Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Nullam convallis orci a augue vehicula, a convallis
+            urna feugiat.
+          </p>
+          <div class="price">฿3,000</div>
+          <div class="product-buttons">
+            <button>เพิ่มไปยังตะกร้า</button>
+            <button>เพิ่มเติม</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

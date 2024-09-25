@@ -1,0 +1,193 @@
+{% extends "navebar.html" %} {% block content %}
+<div class="news-container">
+  <style>
+    body {
+      background-color: #f4f4f4; /* สีพื้นหลังของทั้งหน้า */
+    }
+    .fade-in {
+      opacity: 0;
+      animation: fadeInAnimation 1s ease-in forwards;
+    }
+
+    @keyframes fadeInAnimation {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .news-container {
+      background-color: #ffffff; /* สีพื้นหลังของคอนเทนเนอร์ */
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      margin: 20px auto;
+    }
+
+    .news-container h1 {
+      margin: 0 0 20px;
+      font-size: 28px;
+      color: #333;
+      text-align: center;
+    }
+
+    .news-container .news-item {
+      margin-bottom: 20px;
+    }
+
+    .news-container .news-item img {
+      border-radius: 8px;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .news-container .news-item img.expanded {
+      transform: scale(1.2);
+    }
+
+    .news-container .news-item h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .news-container .news-item p {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .news-container .news-item a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .news-container .news-item a:hover {
+      text-decoration: underline;
+    }
+
+    .news-details {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, opacity 0.5s ease;
+      opacity: 0;
+    }
+
+    .news-details.show {
+      max-height: 500px; /* กำหนดความสูงสูงสุดของรายละเอียด */
+      opacity: 1;
+    }
+
+    .news-item button {
+      background-color: #6633cc; /* สีพื้นหลังของปุ่ม */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .news-item button:hover {
+      background-color: #4b2a8b; /* สีพื้นหลังของปุ่มเมื่อชี้เมาส์ */
+      transform: scale(1.05); /* ขยายปุ่มเล็กน้อยเมื่อชี้เมาส์ */
+    }
+  </style>
+  <div class="container">
+    <div class="fade-in">
+      <h1>ข่าวสารล่าสุด</h1>
+      <div class="news-item">
+        <img
+          src="https://i.pinimg.com/736x/f9/c3/71/f9c371339f28f9d5c26b75ade2241811.jpg"
+          alt="ข่าว 1"
+          class="news-img"
+          id="news-img-1"
+        />
+        <h2>หัวข้อข่าว 1</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+          convallis orci a augue vehicula, a convallis urna feugiat.
+        </p>
+        <button onclick="toggleDetails('news-1', this)">รายละเอียด</button>
+        <div class="news-details" id="news-1">
+          <p>
+            รายละเอียดเพิ่มเติมของข่าว 1 Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Nullam convallis orci a augue vehicula, a convallis
+            urna feugiat. Phasellus lacinia felis ac turpis euismod, a dignissim
+            libero vulputate.
+          </p>
+        </div>
+      </div>
+      <div class="news-item">
+        <img
+          src="https://i.pinimg.com/736x/5a/04/ca/5a04ca8563e9fc582797e2e1c40415bb.jpg"
+          alt="ข่าว 2"
+          class="news-img"
+          id="news-img-2"
+        />
+        <h2>หัวข้อข่าว 2</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+          convallis orci a augue vehicula, a convallis urna feugiat.
+        </p>
+        <button onclick="toggleDetails('news-2', this)">รายละเอียด</button>
+        <div class="news-details" id="news-2">
+          <p>
+            รายละเอียดเพิ่มเติมของข่าว 2 Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Nullam convallis orci a augue vehicula, a convallis
+            urna feugiat. Phasellus lacinia felis ac turpis euismod, a dignissim
+            libero vulputate.
+          </p>
+        </div>
+      </div>
+      <div class="news-item">
+        <img
+          src="https://i.pinimg.com/736x/21/73/18/217318dc3ee16c87793cbcb4bae737ba.jpg"
+          alt="ข่าว 3"
+          class="news-img"
+          id="news-img-3"
+        />
+        <h2>หัวข้อข่าว 3</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+          convallis orci a augue vehicula, a convallis urna feugiat.
+        </p>
+        <button onclick="toggleDetails('news-3', this)">รายละเอียด</button>
+        <div class="news-details" id="news-3">
+          <p>
+            รายละเอียดเพิ่มเติมของข่าว 3 Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Nullam convallis orci a augue vehicula, a convallis
+            urna feugiat. Phasellus lacinia felis ac turpis euismod, a dignissim
+            libero vulputate.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleDetails(id, button) {
+      const details = document.getElementById(id);
+      const img = details.previousElementSibling;
+
+      if (details.classList.contains("show")) {
+        details.classList.remove("show");
+        img.classList.remove("expanded");
+        button.textContent = "รายละเอียด";
+      } else {
+        details.classList.add("show");
+        img.classList.add("expanded");
+        button.textContent = "ปิด";
+      }
+    }
+  </script>
+</div>
+{% endblock content %}

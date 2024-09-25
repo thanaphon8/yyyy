@@ -1,0 +1,118 @@
+{% extends "navebar.html" %} {% block content %}
+<div class="register-container">
+  <style>
+    body {
+      background-color: #ffffff; /* สีพื้นหลังของทั้งหน้า */
+    }
+    .fade-in {
+      opacity: 0;
+      animation: fadeInAnimation 1s ease-in forwards;
+    }
+
+    @keyframes fadeInAnimation {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    .register-container {
+      background-color: #ffffff; /* สีเหลืองเข้มสำหรับพื้นหลังฟอร์ม */
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      margin: 20px auto;
+    }
+
+    .register-container h2 {
+      margin: 0 0 20px;
+      font-size: 28px;
+      color: #333;
+      text-align: center;
+    }
+
+    .register-container form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .register-container label {
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    .register-container input {
+      margin-bottom: 15px;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    .register-container button {
+      padding: 12px;
+      background-color: #ff9933; /* สีน้ำเงินเข้ม */
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .register-container button:hover {
+      background-color: #ff6633; /* สีน้ำเงินเข้มเมื่อชี้เมาส์ */
+      transform: scale(1.05); /* ขยายปุ่มเล็กน้อยเมื่อชี้เมาส์ */
+    }
+
+    .register-container .login-link {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .register-container .login-link a {
+      color: #0033cc; /* สีน้ำเงินเข้ม */
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .register-container .login-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <div class="container">
+    <div class="fade-in">
+      <h1>ลงทะเบียน</h1>
+      <form>
+        <label for="username">ชื่อผู้ใช้:</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="email">อีเมล:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="password">รหัสผ่าน:</label>
+        <input type="password" id="password" name="password" required />
+
+        <label for="confirm-password">ยืนยันรหัสผ่าน:</label>
+        <input
+          type="password"
+          id="confirm-password"
+          name="confirm-password"
+          required
+        />
+
+        <button type="submit">ลงทะเบียน</button>
+      </form>
+      <div class="login-link">
+        <p>มีบัญชีอยู่แล้ว? <a href="login">เข้าสู่ระบบ</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

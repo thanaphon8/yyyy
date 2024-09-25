@@ -1,0 +1,163 @@
+{% extends "navebar.html" %} {% block content %}
+<div class="inquiry-container">
+  <style>
+    body {
+      background-color: #f0fc05; /* สีพื้นหลังของทั้งหน้า */
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: fadeInAnimation 1s ease-in forwards;
+    }
+
+    @keyframes fadeInAnimation {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .inquiry-container {
+      background-color: #f0fc05; /* สีพื้นหลังฟอร์ม */
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      margin: 20px auto;
+    }
+
+    .inquiry-container h2 {
+      margin: 0 0 20px;
+      font-size: 28px;
+      color: #333;
+      text-align: center;
+    }
+
+    .inquiry-container form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .inquiry-container label {
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    .inquiry-container input,
+    .inquiry-container textarea {
+      margin-bottom: 15px;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    .inquiry-container textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .inquiry-container button {
+      padding: 12px;
+      background-color: #ff9933;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .inquiry-container button:hover {
+      background-color: #ff6633;
+      transform: scale(1.05);
+    }
+
+    .inquiry-container .back-link {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .inquiry-container .back-link a {
+      color: #0033cc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .inquiry-container .back-link a:hover {
+      text-decoration: underline;
+    }
+
+    .social-links {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .social-links a {
+      margin: 10px 0;
+      text-decoration: none;
+      color: #333;
+      font-size: 24px;
+      display: block;
+      text-align: center;
+    }
+
+    .social-links a:hover {
+      color: #ff9933;
+    }
+
+    /* Add icons for social media */
+    .social-links a.facebook::before {
+      content: "📘"; /* Use an icon or emoji */
+    }
+    .social-links a.line::before {
+      content: "💬";
+    }
+    .social-links a.tiktok::before {
+      content: "🎵";
+    }
+  </style>
+
+  <div class="container">
+    <div class="fade-in">
+      <h1>สอบถามข้อมูล</h1>
+      <form>
+        <label for="name">ชื่อของคุณ:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">อีเมลของคุณ:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="subject">หัวข้อเรื่อง:</label>
+        <input type="text" id="subject" name="subject" required />
+
+        <label for="message">ข้อความ:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">ส่งข้อมูล</button>
+      </form>
+
+      <div class="social-links">
+        <p>ติดต่อเราผ่านทาง:</p>
+        <a href="https://www.facebook.com" class="facebook" target="_blank">
+          Facebook</a
+        >
+        <a href="https://line.me" class="line" target="_blank"> Line</a>
+        <a href="https://www.tiktok.com" class="tiktok" target="_blank">
+          TikTok</a
+        >
+      </div>
+
+      <div class="back-link">
+        <p><a href="home">กลับไปหน้าหลัก</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar Example</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    >
+    <title>Expandable Content</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .navbar-container {
+        overflow-x: auto; /* เปิดใช้งานการเลื่อนแนวนอน */
+        white-space: nowrap; /* ไม่ให้ Navbar แยกแถว */
+      }
+
+      .navbar {
+        background-color: transparent; /* ลบพื้นหลังของ Navbar */
+        display: flex;
+        padding: 10px 0; /* เพิ่มช่องว่างด้านบนและล่างของ Navbar */
+      }
+
+      .navbar a {
+        display: inline-block;
+        color: #ffffff; /* ตัวหนังสือสีขาว */
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        font-size: 16px;
+        border-radius: 12px; /* ขอบมน */
+        background-color: #6633cc; /* สีน้ำเงินเข้ม */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* เงาเล็กน้อย */
+        transition: all 0.3s ease;
+        margin: 0 5px; /* เพิ่มช่องว่างระหว่างปุ่ม */
+      }
+
+      .navbar a:hover {
+        background-color: #660099; /* สีน้ำเงินเข้มเมื่อชี้เมาส์ */
+        color: white;
+        transform: scale(1.1);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* เงาที่ชัดเจนขึ้นเมื่อชี้เมาส์ */
+      }
+
+      .navbar i {
+        font-size: 20px; /* iconsize */
+      }
+
+      /* Media Queries สำหรับขนาดหน้าจอเล็ก */
+      @media (max-width: 768px) {
+        .navbar a {
+          font-size: 14px; /* ปรับขนาดตัวอักษร */
+          padding: 10px 15px; /* ปรับขนาด padding */
+        }
+      }
+
+      /* Media Queries สำหรับขนาดหน้าจอที่เล็กที่สุด */
+      @media (max-width: 480px) {
+        .navbar a {
+          font-size: 12px; /* ปรับขนาดตัวอักษร */
+          padding: 8px 12px; /* ปรับขนาด padding */
+        }
+
+        .navbar i {
+          font-size: 18px; /* ขนาดไอคอน */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar-container">
+      <div class="navbar">
+        <a href="http://127.0.0.1:8000/"><i class="fas fa-home"></i></a>
+        <a href="event">กิจกรรม</a>
+        <a href="contact">สอบถาม</a>
+        <a href="register">ลงทะเบียน</a>
+        <a href="login">เข้าสู่ระบบ</a>
+      </div>
+    </div>
+  </body>
+</html>
+{% block content %}{% endblock content %}
