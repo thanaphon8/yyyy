@@ -11,5 +11,9 @@
       "src": "/(.*)",
       "dest": "webpage/wsgi.py"
     }
+  ],
+  "redirects": [
+    { "source": "/home", "destination": "/", "permanent": true }
   ]
+  
 }
